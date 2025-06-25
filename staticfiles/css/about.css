@@ -1,0 +1,350 @@
+/* About Page Specific Styles */
+
+/* Hero Section */
+.ababouthero {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #090966, #6a0dad, #ff4081);
+  position: relative;
+  overflow: hidden;
+}
+
+.ababouthero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 156, 156, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(0, 247, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.abherocontent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.abpagetitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #ff9c9c;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
+}
+
+.abherodescription {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.8;
+  color: #cbd5e1;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.abhighlight {
+  color: #ff9c9c;
+  font-weight: 600;
+}
+
+.abherovisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInRight 1s ease-out 0.4s both;
+}
+
+.abprofilecard {
+  background: rgba(40, 5, 86, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+  width: 100%;
+}
+
+.abprofilecard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.abprofileimage {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ff9c9c;
+}
+
+.abprofileimage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.abprofileoverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 156, 156, 0.2), rgba(0, 247, 255, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.abprofileimage:hover .abprofileoverlay {
+  opacity: 1;
+}
+
+.abprofileimage:hover img {
+  transform: scale(1.1);
+}
+
+.abprofileinfo h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.abprofileinfo p {
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+.absociallinks {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.absociallink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #00f7ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.absociallink:hover {
+  background: #ff9c9c;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.ababoutdetails {
+  padding: 5rem 0;
+  background: #090966;
+}
+
+.abdetailsgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.abskillssection,
+.abeducationsection {
+  background: rgba(40, 5, 86, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.abskillssection.animate-in,
+.abeducationsection.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+}
+
+.abskillssection:hover,
+.abeducationsection:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.absectionheader {
+  margin-bottom: 2rem;
+}
+
+.absectiontitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #00f7ff;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.absectiontitle::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff9c9c, #00f7ff);
+  border-radius: 2px;
+}
+
+.absectionsubtitle {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.abskillscontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.abskillitem {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.6s ease;
+}
+
+.abskillitem.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.abskillitem:hover {
+  transform: translateX(5px);
+}
+
+.abskillheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.abskilllabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.abskilllabel svg {
+  color: #00f7ff;
+}
+
+.abskillpercentage {
+  font-weight: 600;
+  color: #ff9c9c;
+  font-size: 0.9rem;
+}
+
+.abskillbar {
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.abskillfill {
+  height: 100%;
+  background: linear-gradient(135deg, #ff9c9c, #00f7ff);
+  border-radius: 4px;
+  width: 0;
+  transition: width 1.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.abskillfill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.abeducationcard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.abeducationitem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border-left: 4px solid #00f7ff;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.abeducationitem.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.6s ease;
+}
+
+.abeducationitem:hover {
+  background: rgba(0, 247, 255, 0.1);
+  transform: translateX(-5px);
+}
+
+.abeducationicon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff9c9c, #00f7ff);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.abeducationcontent h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.abeducationcontent p {
+  color: #cbd5e1;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.abeducationyear {
+  color: #ff9c9c !important;
+  font-weight: 500 !important;
+}

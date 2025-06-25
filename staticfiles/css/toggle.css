@@ -1,0 +1,236 @@
+/* Theme Toggle Button Styles */
+.toggle-theme {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+  z-index: 1100;
+  transition: all 0.4s ease;
+  color: #eee;
+  background: linear-gradient(135deg, #222, #333);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.toggle-theme::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.toggle-theme:hover::before {
+  left: 100%;
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.theme-text {
+  font-size: 0.85rem;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effect for toggle button (dark mode) */
+.toggle-theme:hover {
+  background: linear-gradient(135deg, #333, #444);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.toggle-theme:hover .theme-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Active state (light mode) */
+.toggle-theme.active {
+  background: linear-gradient(135deg, #fff, #f0f0f0);
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-theme.active .theme-icon {
+  transform: rotate(180deg);
+}
+
+/* Special hover effect when active (light mode) */
+.toggle-theme.active:hover {
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  box-shadow: 0 0 20px rgba(255, 110, 196, 0.8), 0 0 30px rgba(120, 115, 245, 0.6), 0 0 40px rgba(74, 222, 128, 0.5), 0
+    0 50px rgba(250, 204, 21, 0.4), 0 0 60px rgba(251, 113, 133, 0.3);
+  transform: translateY(-3px);
+}
+
+.toggle-theme.active:hover .theme-icon {
+  transform: rotate(180deg) scale(1.2);
+}
+
+/* Gradient animation for special effects */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.toggle-theme.active:hover {
+  background: linear-gradient(45deg, #ff6ec7, #7b73f5, #4ade80, #facc15, #fb7185);
+  background-size: 300% 300%;
+  animation: gradientShift 2s ease infinite;
+}
+
+/* Focus state for accessibility */
+.toggle-theme:focus {
+  outline: 2px solid #4ade80;
+  outline-offset: 2px;
+}
+
+/* Loading animation */
+.toggle-theme.loading {
+  pointer-events: none;
+}
+
+.toggle-theme.loading .theme-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .toggle-theme {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .theme-text {
+    display: none;
+  }
+
+  .theme-icon {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-theme {
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+
+  .theme-icon {
+    font-size: 1rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .toggle-theme {
+    border: 2px solid currentColor;
+  }
+
+  .toggle-theme.active:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: none;
+    animation: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .toggle-theme,
+  .theme-icon,
+  .theme-text {
+    transition: none;
+    animation: none;
+  }
+
+  .toggle-theme::before {
+    display: none;
+  }
+}
+
+/* Dark mode specific adjustments */
+body.light-mode .toggle-theme {
+  background: linear-gradient(135deg, #333, #222);
+  color: #eee;
+}
+
+body.light-mode .toggle-theme:hover {
+  background: linear-gradient(135deg, #444, #333);
+}
+
+/* Additional button styles for consistency */
+.btn {
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Theme transition effects */
+body {
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+body * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom properties for theme switching */
+:root {
+  --theme-transition: all 0.3s ease;
+}
+
+.toggle-theme,
+nav,
+.project-card,
+footer {
+  transition: var(--theme-transition);
+}

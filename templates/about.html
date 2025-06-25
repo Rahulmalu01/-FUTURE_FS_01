@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="/static/css/about.css">
+{% endblock head %}
+
+{% block content %}
+  <main>
+    <section class="about-description">
+      <div class="container">
+        <h1>About Me</h1>
+        <p>Hi! I'm <strong>Rahul Malu</strong>, a second-year engineering student passionate about automation and Python development. I enjoy building tools that solve problems, automate tasks, and improve efficiency. My interests include scripting, web development, and learning new technologies to create meaningful solutions.</p>
+      </div>
+    </section>
+    <section class="about-details">
+      <div class="container two-columns">
+        <div class="column skills">
+          <h2>Skills</h2>
+          <div class="skill">
+            <label>Python</label>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 70%;">70%</div>
+            </div>
+          </div>
+          <div class="skill">
+            <label>Web Scraping</label>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 50%;">50%</div>
+            </div>
+          </div>
+          <div class="skill">
+            <label>HTML CSS JS</label>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 80%;">80%</div>
+            </div>
+          </div>
+          <div class="skill">
+            <label>Git & GitHub</label>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 75%;">75%</div>
+            </div>
+          </div>
+          <div class="skill">
+            <label>Django/Flask</label>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 70%;">70%</div>
+            </div>
+          </div>
+          <div class="skill">
+            <label>Java</label>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 70%;">70%</div>
+            </div>
+          </div>
+        </div>
+        <div class="column education">
+          <h2>Education</h2>
+          <ul>
+            <li><strong>Degree:</strong> B.Tech in Computer Science</li>
+            <li><strong>Year:</strong> 2nd Year</li>
+            <li><strong>Institution:</strong> MIT Art Design and Technology University</li>
+            <li><strong>Location:</strong> Pune Maharastra</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

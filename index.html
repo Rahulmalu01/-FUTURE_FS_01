@@ -1,0 +1,32 @@
+<main>
+  <section class="firstsection">
+    <div class="leftside">
+      Hi, My Name is
+      <div>
+        <span class="purple"><b>Rahul Malu</b></span>
+      </div>
+      <div>And I am passionate</div>
+      <b><span id="element"></span></b>
+    </div>
+    <div class="rightside">
+      <img src="/static/assets/developer.webp" alt="" />
+    </div>
+  </section>
+</main>
+<script src="/static/js/typed_umd.js"></script>
+<script>
+  var typed = new Typed("#element", {
+    strings: [
+      "Cloud Engineer",
+      "Web Developer",
+      "App Developer",
+      "Web Designer",
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 1500,
+    startDelay: 500,
+    loop: true,
+  });
+</script>
+{% endblock %}
